@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "319278557957",
+    "firebase_url": "https://yedsocapp-47aad.firebaseio.com",
+    "project_id": "yedsocapp-47aad",
+    "storage_bucket": "yedsocapp-47aad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319278557957:android:484688a02b442c1b98256c",
+        "android_client_info": {
+          "package_name": "com.example.yeditepesocapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319278557957-qtr670t5n4qlobf3mvpgau10s6cldc0e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.yeditepesocapp",
+            "certificate_hash": "e49c9bee8512cc0911f471551c439888b50a8e81"
+          }
+        },
+        {
+          "client_id": "319278557957-hnsps9rkil3biqh746ll7u48rn5oojn4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQW0mZALrtM1Y6PObXhjDZQ0J0sKDGiRI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "319278557957-hnsps9rkil3biqh746ll7u48rn5oojn4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

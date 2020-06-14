@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_yedsocapp_op"
+        android:enabled="true"
+        android:icon="@drawable/yedsocapp_op"
+        android:title="Opinion"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_yedsocapp_topic"
+        android:enabled="true"
+        android:icon="@drawable/yedsocapp_topic"
+        android:title="Topic"
+        app:showAsAction="ifRoom" />
+    <!--
+    <item
+        android:id="@+id/action_yedsocapp_message"
+        android:enabled="true"
+        android:icon="@drawable/yedsocapp_message"
+        android:title="Message"
+        app:showAsAction="ifRoom" /><! -->
+    <item
+        android:id="@+id/action_yedsocapp_event"
+        android:enabled="true"
+        android:icon="@drawable/yedsocapp_event"
+        android:title="Event"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_yedsocapp_profile"
+        android:enabled="true"
+        android:icon="@drawable/yedsocapp_profile"
+        android:title="Profile"
+        app:showAsAction="ifRoom" />
+</menu>

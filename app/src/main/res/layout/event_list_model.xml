@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingBottom="5dp"
+    android:background="@drawable/gradient_background"
+    >
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="212dp"
+        app:cardBackgroundColor="@color/cardview_light_background"
+        app:cardCornerRadius="@dimen/cardview_default_radius"
+        app:cardElevation="@dimen/cardview_default_elevation"
+        app:contentPadding="7dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp">
+
+                    <TextView
+                        android:id="@+id/textViewEventName"
+                        android:layout_width="177dp"
+                        android:layout_height="32dp"
+                        android:padding="2dp"
+                        android:text="EventName"
+                        android:textColor="@color/cardview_dark_background"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/textViewNameSurname"
+                        android:layout_width="177dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="NameSurname"
+                        android:gravity="right"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textViewEventName"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textViewModelEventBody"
+                        android:layout_width="384dp"
+                        android:layout_height="98dp"
+                        android:layout_marginBottom="8dp"
+                        android:padding="2dp"
+                        android:text="EventBody"
+                        android:textColor="@color/cardview_dark_background"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    tools:layout_editor_absoluteY="147dp">
+
+                    <TextView
+                        android:id="@+id/textViewEventTime"
+                        android:layout_width="164dp"
+                        android:layout_height="51dp"
+                        android:text="Time"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintVertical_bias="0.867" />
+
+                    <TextView
+                        android:id="@+id/textViewEventLocation"
+                        android:layout_width="218dp"
+                        android:layout_height="57dp"
+                        android:text="Location"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.641"
+                        app:layout_constraintLeft_toRightOf="@+id/textViewEventTime"
+                        app:layout_constraintRight_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintVertical_bias="0.754" />
+
+
+                </android.support.constraint.ConstraintLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

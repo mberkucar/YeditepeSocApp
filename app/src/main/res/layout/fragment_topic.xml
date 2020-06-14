@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TopicFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButtonCreateTopic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="25dp"
+        android:background="@android:color/black"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
+
+    <TextView
+        android:id="@+id/textViewTopic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20sp" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refreshTopic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:paddingTop="4dp"
+            android:id="@+id/listviewTopic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</FrameLayout>

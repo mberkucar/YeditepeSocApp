@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">YeditepeSocApp</string>
+    <string name="login_button">LOGIN</string>
+    <string name="signup_button">SIGN UP</string>
+    <string name="action_sign_in">Log In</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="user_number">Number</string>
+    <string name="user_mail">Email</string>
+    <string name="password">Password</string>
+    <string name="re_enter_password">Again enter your password</string>
+    <string name="faculty_name">Faculty Name</string>
+    <string name="department_name">Department Name</string>
+    <string name="log_in_page">Log In</string>
+    <string name="signup">Sign Up</string>
+    <string name="title_home">Home</string>
+    <string name="title_topic">Topics</string>
+    <string name="title_event">Events</string>
+    <string name="title_message">Messages</string>
+    <string name="title_profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
