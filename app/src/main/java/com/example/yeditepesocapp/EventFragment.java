@@ -52,10 +52,10 @@ public class EventFragment extends Fragment {
     private String user_id, page="4";
     private Context context;
     private List<EventModel> modelList;
-    private RecyclerView recyclerView;
     private ListView listView;
     private TextView textView;
     private SwipeRefreshLayout refreshLayout;
+    private Fragment fragment = new Fragment();
 
     private FloatingActionButton fab;
     public View myView;
@@ -124,6 +124,12 @@ public class EventFragment extends Fragment {
                 sendRequestRefresh();
             }
         });
+        getActivity().runOnUiThread(new Runnable() {
+            public void run() {
+                setAdapter();
+            }
+        });
+
 
         Log.d("Volley işlemleri testi", ".............................................");
 
@@ -186,6 +192,7 @@ public class EventFragment extends Fragment {
                                         " "+
                                         event.getString("user_surname");
                                 model.setUser_name(userNameSurname);
+                                model.setEvent_id(event.getString("event_id"));
                                 model.setEvent_name(event.getString("event_name"));
                                 model.setEvent_body(event.getString("event_body"));
                                 model.setEvent_location(event.getString("event_location"));
@@ -240,8 +247,18 @@ public class EventFragment extends Fragment {
 
         //RecyclerView.Adapter mAdapter = new EventAdapter(context, modelList,context);
         //recyclerView.setAdapter(mAdapter);
-        EventAdapter eventAdapter = new EventAdapter(context, modelList,true);
-        listView.setAdapter(eventAdapter);
+        final EventAdapter eventAdapter = new EventAdapter(context, modelList,true, user_id);
+        getActivity().runOnUiThread(new Runnable() {
+            public void run() {
+                //do your modifications here
+
+                // for example
+                //eventAdapter.add(new Object());
+                eventAdapter.notifyDataSetChanged();
+                listView.setAdapter(eventAdapter);
+                eventAdapter.notifyDataSetChanged();
+            }
+        });
 
 
     }
@@ -279,6 +296,7 @@ public class EventFragment extends Fragment {
                                         " "+
                                         event.getString("user_surname");
                                 model.setUser_name(userNameSurname);
+                                model.setEvent_id(event.getString("event_id"));
                                 model.setEvent_name(event.getString("event_name"));
                                 model.setEvent_body(event.getString("event_body"));
                                 model.setEvent_location(event.getString("event_location"));
@@ -316,4 +334,91 @@ public class EventFragment extends Fragment {
         RequestQueue requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(request);
     }
+    public void sendRequestwithButton() {
+        StringRequest request = new StringRequest(Request.Method.POST, Constants.URL_REGISTER_EVENT, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                //loading.dismiss();
+                Log.d("Json bilgisi Events: ", response);
+
+                String status = null, message = null;
+                JSONArray events = null;
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    status = jsonObject.getString("status");
+                    message = jsonObject.getString("message");
+                    events = jsonObject.getJSONArray("events");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                //everything is ok
+                if (status.equals("200")) {
+                    if (events.length()==0) {
+                        textView.setText("There is nothing here.");
+                    }
+                    else{
+                        for (int i = 0; i < events.length(); i++){
+                            JSONObject event;
+                            EventModel model = new EventModel();
+                            try {
+                                event = events.getJSONObject(i);
+                                String userNameSurname = event.getString("user_name")+
+                                        " "+
+                                        event.getString("user_surname");
+                                model.setUser_name(userNameSurname);
+                                model.setEvent_id(event.getString("event_id"));
+                                model.setEvent_name(event.getString("event_name"));
+                                model.setEvent_body(event.getString("event_body"));
+                                model.setEvent_location(event.getString("event_location"));
+                                model.setEvent_date(event.getString("event_date"));
+                            } catch (JSONException e) {
+                                Log.e("json parse error;", e.getLocalizedMessage());
+                            }
+
+                            modelList.add(model);
+
+                        }
+
+                        setAdapter();
+                    }
+
+
+
+                }
+
+                else {
+                    //request başarısız ise
+                    Snackbar.make(listView, message, Snackbar.LENGTH_LONG).show();
+                }
+                Log.d("Volley işlemleri testi", "request işlemler tamamlandı.........................");
+
+
+                /*if (modelList.size() == 0) {
+                   textView.setText("Hiçbir tweet bulunamadı...");
+                } else {
+                    setAdapter();
+                }
+*/
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //loading.dismiss();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("user_id", user_id);
+                //params.put("event_id", event_id);
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+        requestQueue.add(request);
+    }
+
+
 }

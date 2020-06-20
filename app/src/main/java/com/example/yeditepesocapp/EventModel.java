@@ -2,7 +2,7 @@ package com.example.yeditepesocapp;
 
 public class EventModel {
 
-    private String user_name, user_surname, event_name, event_body;
+    private String user_name, user_surname, event_id, event_name, event_body;
     private String event_date, event_location;
 
     public EventModel() {
@@ -22,6 +22,14 @@ public class EventModel {
 
     public void setUser_surname(String user_surname) {
         this.user_surname = user_surname;
+    }
+
+    public String getEvent_id() {
+        return event_id;
+    }
+
+    public void setEvent_id(String event_id) {
+        this.event_id = event_id;
     }
 
     public String getEvent_name() {

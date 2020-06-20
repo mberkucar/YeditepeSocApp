@@ -19,7 +19,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="199dp"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -51,8 +51,8 @@
                         android:layout_height="32dp"
                         android:layout_marginStart="40dp"
                         android:layout_marginBottom="8dp"
-                        android:text="NameSurname"
                         android:gravity="right"
+                        android:text="NameSurname"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/textViewEventName"
                         app:layout_constraintTop_toTopOf="parent"
@@ -67,7 +67,7 @@
 
                     <TextView
                         android:id="@+id/textViewModelEventBody"
-                        android:layout_width="384dp"
+                        android:layout_width="403dp"
                         android:layout_height="98dp"
                         android:layout_marginBottom="8dp"
                         android:padding="2dp"
@@ -80,36 +80,82 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0" />
 
+
                 </android.support.constraint.ConstraintLayout>
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="29dp"
+                    android:layout_height="54dp"
                     tools:layout_editor_absoluteY="147dp">
 
                     <TextView
                         android:id="@+id/textViewEventTime"
-                        android:layout_width="164dp"
-                        android:layout_height="51dp"
+                        android:layout_width="198dp"
+                        android:layout_height="26dp"
+                        android:layout_marginEnd="200dp"
                         android:text="Time"
                         android:textSize="14sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintBottom_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="parent"
-                        app:layout_constraintVertical_bias="0.867" />
+                        app:layout_constraintVertical_bias="0.35" />
 
                     <TextView
                         android:id="@+id/textViewEventLocation"
-                        android:layout_width="218dp"
-                        android:layout_height="57dp"
+                        android:layout_width="198dp"
+                        android:layout_height="26dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
                         android:text="Location"
                         android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/textViewEventTime"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.005"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.111" />
+
+                    <TextView
+                        android:id="@+id/textViewEventId"
+                        android:layout_width="198dp"
+                        android:layout_height="26dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="Id"
+                        android:visibility="invisible"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/textViewEventTime"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.005"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.111" />
+
+                    <Button
+                        android:id="@+id/RegisterButton"
+                        android:layout_width="128dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="REGISTER"
+                        android:visibility="invisible"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintHorizontal_bias="0.641"
-                        app:layout_constraintLeft_toRightOf="@+id/textViewEventTime"
-                        app:layout_constraintRight_toLeftOf="parent"
-                        app:layout_constraintTop_toBottomOf="parent"
-                        app:layout_constraintVertical_bias="0.754" />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/unregisterButton"
+                        android:layout_width="128dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="UNREGISTER"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
 
                 </android.support.constraint.ConstraintLayout>

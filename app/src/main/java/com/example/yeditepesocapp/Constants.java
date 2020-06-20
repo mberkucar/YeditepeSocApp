@@ -18,6 +18,9 @@ public class Constants {
     public static final String URL_ENTRYUSER = ROOT_URL+"getEntrywithUserId.php";
     public static final String URL_OPINIONUSER = ROOT_URL+"getUserOpinionwithUserId.php";
     public static final String URL_USERLIST = ROOT_URL+"getUserList.php";
+    public static final String URL_REGISTER_EVENT = ROOT_URL+"registerEvent.php";
+    public static final String URL_UNREGISTER_EVENT = ROOT_URL+"unregisterEvent.php";
+    public static final String URL_GETEVENT_USERID = ROOT_URL+"getEventwithUserId.php";
 
 
 }
