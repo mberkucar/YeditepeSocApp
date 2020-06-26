@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".AddCourseEntryActivity"></activity>
+        <activity android:name=".CourseEntryActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +46,8 @@
             android:name=".HomeActivity"
             android:parentActivityName=".LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
-        <activity android:name=".SearchActivity"
+        <activity
+            android:name=".SearchActivity"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/Theme.AppCompat">
             <meta-data
