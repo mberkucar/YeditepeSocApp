@@ -2,7 +2,7 @@ package com.example.yeditepesocapp;
 
 public class Constants {
 
-    //private static final String ROOT_URL = "http://192.168.1.39:8888/Android/v1/";
+    //private static final String ROOT_URL = "http://192.168.1.35:8888/Android/v1/";
     private static final String ROOT_URL ="http://172.20.10.3:8888/Android/v1/";
     //private static final String ROOT_URL ="http://192.168.1.42:8888/Android/v1/";
     public static final String URL_REGISTER = ROOT_URL+"signupUser.php";
@@ -25,6 +25,7 @@ public class Constants {
     public static final String URL_COURSE = ROOT_URL+"getCourse.php";
     public static final String URL_COURSE_ENTRY = ROOT_URL+"getCourseEntry.php";
     public static final String URL_ADD_CENTRY = ROOT_URL+"addCourseEntry.php";
+    public static final String URL_EVENTUSER_LIST = ROOT_URL+"getEventwithUserList.php";
 
 
 }

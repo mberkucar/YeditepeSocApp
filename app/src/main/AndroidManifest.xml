@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AddCourseEntryActivity"></activity>
+        <activity android:name=".EventActivity"></activity>
+        <activity android:name=".AddCourseEntryActivity" />
         <activity android:name=".CourseEntryActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

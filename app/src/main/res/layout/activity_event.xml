@@ -4,24 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusable="false"
-    tools:context=".EventFragment">
+    android:background="@drawable/gradient_background"
+    tools:context=".SearchActivity">
 
-    <!-- TODO: Update blank fragment layout -->
+    <FrameLayout
+        android:id="@+id/fragment_containerUser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="56dp"
+        android:text="@string/title_home"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButtonCreateEvent"
+        android:id="@+id/floatingActionButtonEventFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_marginEnd="17dp"
+        android:layout_gravity="bottom|left"
+        android:layout_marginStart="16dp"
         android:layout_marginBottom="25dp"
         android:background="@android:color/black"
         android:clickable="true"
         app:backgroundTint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_edit" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="?attr/homeAsUpIndicator" />
 
     <TextView
         android:id="@+id/textViewEvent"
@@ -31,16 +38,15 @@
         android:textSize="20sp" />
 
     <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/RefreshEvent"
+        android:id="@+id/refreshEventUser"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <ListView
-            android:id="@+id/Eventlistview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:paddingTop="4dp"
+            android:id="@+id/listviewEventUser"
             android:clickable="true"
-            android:paddingTop="4dp" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
     </android.support.v4.widget.SwipeRefreshLayout>
 

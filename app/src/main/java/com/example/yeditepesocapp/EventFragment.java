@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -49,7 +50,7 @@ import java.util.Map;
 public class EventFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private String user_id, page="4";
+    private String event_id, user_id, page="4";
     private Context context;
     private List<EventModel> modelList;
     private ListView listView;
@@ -127,6 +128,19 @@ public class EventFragment extends Fragment {
         getActivity().runOnUiThread(new Runnable() {
             public void run() {
                 setAdapter();
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                EventModel info = (EventModel)listView.getItemAtPosition(position);
+                Log.i("onClickItem", info.getEvent_id());
+                event_id = info.getEvent_id();
+                Intent intent = new Intent(getActivity(),EventActivity.class);
+                intent.putExtra("user_id", user_id);
+                intent.putExtra("event_id", event_id);
+                getActivity().startActivity(intent);
             }
         });
 
@@ -245,10 +259,8 @@ public class EventFragment extends Fragment {
     }
     private void setAdapter() {
 
-        //RecyclerView.Adapter mAdapter = new EventAdapter(context, modelList,context);
-        //recyclerView.setAdapter(mAdapter);
         final EventAdapter eventAdapter = new EventAdapter(context, modelList,true, user_id);
-        getActivity().runOnUiThread(new Runnable() {
+        /*getActivity().runOnUiThread(new Runnable() {
             public void run() {
                 //do your modifications here
 
@@ -258,8 +270,9 @@ public class EventFragment extends Fragment {
                 listView.setAdapter(eventAdapter);
                 eventAdapter.notifyDataSetChanged();
             }
-        });
-
+        });*/
+        listView.setAdapter(eventAdapter);
+        eventAdapter.notifyDataSetChanged();
 
     }
     private void sendRequestRefresh() {

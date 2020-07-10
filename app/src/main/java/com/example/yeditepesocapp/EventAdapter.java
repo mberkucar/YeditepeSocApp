@@ -1,20 +1,12 @@
 package com.example.yeditepesocapp;
 
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.nfc.Tag;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,11 +23,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,24 +49,6 @@ public class EventAdapter extends BaseAdapter {
         this.deleteEvent=deleteEvent;
         this.user_id=user_id;
     }
-    /*
-    class viewHolder{
-        TextView nameSurname, event_name, event_date, event_body, event_location;
-        Button registerButton, unregisterButton;
-
-        viewHolder(View v){
-            nameSurname=(TextView)v.findViewById(R.id.textViewNameSurname);
-            event_name=(TextView)v.findViewById(R.id.textViewEventName);
-            event_date=(TextView)v.findViewById(R.id.textViewEventTime);
-            event_body=(TextView)v.findViewById(R.id.textViewModelEventBody);
-            event_location=(TextView)v.findViewById(R.id.textViewEventLocation);
-            registerButton = (Button) v.findViewById(R.id.RegisterButton);
-            unregisterButton = (Button) v.findViewById(R.id.unregisterButton);
-
-        }
-
-
-    }*/
 
     @Override
     public int getCount() {
@@ -151,6 +122,9 @@ public class EventAdapter extends BaseAdapter {
             }
         }*/
 
+        //int user_id2 = Integer.parseInt(user_id) + 1;
+        //final String user_id3 = String.valueOf(user_id2);
+
 
         RegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,7 +133,8 @@ public class EventAdapter extends BaseAdapter {
                 Log.i(TAG+"position", String.valueOf(position));
                 Log.i(TAG+"event_id", event_id.getText().toString());
                 //sendRequestwithButton(modelList.get(eventNumber).getEvent_id());
-                sendRequestwithButton(event_id.getText().toString(), RegisterButton, UnregisterButton);
+                sendRequestwithButton(event_id.getText().toString(), RegisterButton, UnregisterButton, user_id);
+                //sendRequestwithButton(event_id.getText().toString(), RegisterButton, UnregisterButton, user_id3);
             }
         });
         notifyDataSetChanged();
@@ -176,45 +151,10 @@ public class EventAdapter extends BaseAdapter {
         });
         notifyDataSetChanged();
 
-
-        /*
-        final LinearLayout layout = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.event_list_model, parent, false);
-
-        TextView nameSurname = (TextView) layout.findViewById(R.id.textViewNameSurname);
-        TextView event_name = (TextView) layout.findViewById(R.id.textViewEventName);
-        TextView event_date = (TextView) layout.findViewById(R.id.textViewEventTime);
-        TextView event_body = (TextView) layout.findViewById(R.id.textViewModelEventBody);
-        TextView event_location = (TextView) layout.findViewById(R.id.textViewEventLocation);
-        RegisterButton = (Button) layout.findViewById(R.id.RegisterButton);
-        UnregisterButton = (Button) layout.findViewById(R.id.unregisterButton);
-
-
-
-        final EventModel event = modelList.get(position);
-
-        nameSurname.setText(event.getUser_name());
-        event_name.setText(event.getEvent_name());
-        event_body.setText(event.getEvent_body());
-        event_date.setText(event.getEvent_date());
-        event_location.setText(event.getEvent_location());
-
-        event_id = event.getEvent_id();
-
-
-        RegisterButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendRequestwithButton();
-            }
-        });
-
-
-        return layout;*/
-        notifyDataSetChanged();
         return convertView;
     }
 
-    private void sendRequestwithButton(final String event_id, final Button register, final Button unregister) {
+    private void sendRequestwithButton(final String event_id, final Button register, final Button unregister, final String user_id) {
         StringRequest request = new StringRequest(Request.Method.POST, Constants.URL_REGISTER_EVENT, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
